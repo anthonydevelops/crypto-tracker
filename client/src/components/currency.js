@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Table } from "reactstrap";
 
 class Currency extends Component {
   constructor(props) {
@@ -11,7 +12,9 @@ class Currency extends Component {
   }
 
   componentDidMount() {
-    fetch("https://min-api.cryptocompare.com/data/all/coinlist")
+    fetch(
+      "https://min-api.cryptocompare.com/data/top/totalvol?limit=10&tsym=USD"
+    )
       .then(res => res.json())
       .then(
         result => {
@@ -37,16 +40,29 @@ class Currency extends Component {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
+      // Return the data, which is held as {[ {}, {}, ... ]}
       return (
-        <ul>
-          {Object.keys(data).map(key => {
-            return (
-              <li key={key.toString()}>
-                Key: {key}, Name: {data[key].FullName}
-              </li>
-            );
-          })}
-        </ul>
+        <Table hover>
+          <thead>
+            <tr>
+              <th>Coin Name (Code)</th>
+              <th>Market Cap (USD)</th>
+              <th>Price (USD)</th>
+              <th>24h Change (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map(item => {
+              return (
+                <tr>
+                  <th>
+                    {item.CoinInfo.FullName} ({item.CoinInfo.Name})
+                  </th>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
       );
     }
   }
