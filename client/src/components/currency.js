@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Table } from "reactstrap";
+import { Table, Media } from "reactstrap";
 
 class Currency extends Component {
   constructor(props) {
@@ -13,7 +13,7 @@ class Currency extends Component {
 
   componentDidMount() {
     fetch(
-      "https://min-api.cryptocompare.com/data/top/totalvol?limit=10&tsym=USD"
+      "https://min-api.cryptocompare.com/data/top/totalvol?limit=20&tsym=USD"
     )
       .then(res => res.json())
       .then(
@@ -56,7 +56,24 @@ class Currency extends Component {
               return (
                 <tr>
                   <th>
-                    {item.CoinInfo.FullName} ({item.CoinInfo.Name})
+                    <Media>
+                      <Media left href="#">
+                        <Media
+                          object
+                          sm
+                          src={
+                            "https://www.cryptocompare.com" +
+                            item.CoinInfo.ImageUrl
+                          }
+                          alt={item.CoinInfo.FullName}
+                        />
+                      </Media>
+                      <Media body>
+                        <Media heading>
+                          {item.CoinInfo.FullName} ({item.CoinInfo.Name})
+                        </Media>
+                      </Media>
+                    </Media>
                   </th>
                 </tr>
               );
