@@ -39,9 +39,13 @@ class Currency extends Component {
     } else {
       return (
         <ul>
-          {Object.entries(data).forEach(([key, value]) => (
-            <li>{`${key}: ${value}`}</li>
-          ))}
+          {Object.keys(data).map(key => {
+            return (
+              <li key={key.toString()}>
+                Key: {key}, Name: {data[key].FullName}
+              </li>
+            );
+          })}
         </ul>
       );
     }

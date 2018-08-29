@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Currency from "./components/currency";
+import Currency from "./components/Currency";
 import "./App.css";
 
 class App extends Component {
