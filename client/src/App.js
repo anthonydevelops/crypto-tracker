@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Header from "./components/Navbar";
 import Currency from "./components/Currency";
 import "./App.css";
 
@@ -7,7 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title text-center">Cryptocurrency Tracker</h1>
+          <Header />
           <Currency />
         </header>
       </div>
