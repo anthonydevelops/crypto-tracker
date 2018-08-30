@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Table, Media } from "reactstrap";
+import { Table, Media, Jumbotron } from "reactstrap";
 import "../App.css";
 import CurrencyData from "./CurrencyData";
 
@@ -13,7 +13,7 @@ class Currency extends Component {
 
   componentDidMount() {
     fetch(
-      "https://min-api.cryptocompare.com/data/top/totalvol?limit=20&tsym=USD"
+      "https://min-api.cryptocompare.com/data/top/totalvol?limit=10&tsym=USD"
     )
       .then(res => res.json())
       .then(result => {
@@ -27,45 +27,47 @@ class Currency extends Component {
     // Return the data, which is held as {[ {}, {}, ... ]}
     const { data } = this.state;
     return (
-      <Table hover>
-        <thead>
-          <tr>
-            <th>Coin Name (Code)</th>
-            <th>Market Cap (USD)</th>
-            <th>Price (USD)</th>
-            <th>24h Change (%)</th>
-          </tr>
-        </thead>
-        <tbody>
-          {data.map(item => {
-            return (
-              <tr key={item.CoinInfo.Name.toString()}>
-                <th>
-                  <Media>
-                    <Media href="#">
-                      <Media
-                        object
-                        className="cur-img"
-                        src={
-                          "https://www.cryptocompare.com" +
-                          item.CoinInfo.ImageUrl
-                        }
-                        alt={item.CoinInfo.FullName}
-                      />
-                    </Media>
-                    <Media body>
-                      <Media heading className="cur-header">
-                        {item.CoinInfo.FullName} ({item.CoinInfo.Name})
+      <Jumbotron className="jumbo">
+        <Table hover size="sm">
+          <thead>
+            <tr>
+              <th>Coin Name (Code)</th>
+              <th>Market Cap (USD)</th>
+              <th>Price (USD)</th>
+              <th>24h Change (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map(item => {
+              return (
+                <tr key={item.CoinInfo.Name.toString()}>
+                  <th>
+                    <Media>
+                      <Media href="#">
+                        <Media
+                          object
+                          className="cur-img"
+                          src={
+                            "https://www.cryptocompare.com" +
+                            item.CoinInfo.ImageUrl
+                          }
+                          alt={item.CoinInfo.FullName}
+                        />
+                      </Media>
+                      <Media body>
+                        <Media heading className="cur-header">
+                          {item.CoinInfo.FullName} ({item.CoinInfo.Name})
+                        </Media>
                       </Media>
                     </Media>
-                  </Media>
-                </th>
-                <CurrencyData data={item.CoinInfo.Name} />
-              </tr>
-            );
-          })}
-        </tbody>
-      </Table>
+                  </th>
+                  <CurrencyData data={item.CoinInfo.Name} />
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+      </Jumbotron>
     );
   }
 }

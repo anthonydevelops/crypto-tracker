@@ -8,6 +8,7 @@ import {
   NavItem,
   NavLink
 } from "reactstrap";
+import "../App.css";
 
 export default class Header extends Component {
   constructor(props) {
@@ -28,18 +29,22 @@ export default class Header extends Component {
   render() {
     return (
       <div>
-        <Navbar color="info" light expand="md">
-          <NavbarBrand href="/" className="float-center">
+        <Navbar dark expand="md">
+          <NavbarBrand href="/" className="float-center head">
             CryptoTracker
           </NavbarBrand>
           <NavbarToggler onClick={this.toggle} />
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink>Prices</NavLink>
+                <NavLink href="/" className="price">
+                  Prices
+                </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink>Favorites</NavLink>
+                <NavLink href="/" className="fav">
+                  Favorites
+                </NavLink>
               </NavItem>
             </Nav>
           </Collapse>

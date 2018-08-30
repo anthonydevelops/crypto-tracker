@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "../App.css";
 
 class CurrencyData extends Component {
   constructor(props) {
@@ -30,9 +31,9 @@ class CurrencyData extends Component {
     const { cap, price, change } = this.state;
     return (
       <React.Fragment>
-        <th>{cap}</th>
-        <th>{price}</th>
-        <th>{change}</th>
+        <th className="data-cap">{cap}</th>
+        <th className="data-price">{price}</th>
+        <th className="data-change">{change}</th>
       </React.Fragment>
     );
   }
