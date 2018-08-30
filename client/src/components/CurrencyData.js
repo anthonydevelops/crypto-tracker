@@ -22,7 +22,7 @@ class CurrencyData extends Component {
         this.setState({
           cap: res.DISPLAY[data].USD.MKTCAP,
           price: res.DISPLAY[data].USD.PRICE,
-          change: res.DISPLAY[data].USD.CHANGE24HOUR
+          change: res.DISPLAY[data].USD.CHANGE24HOUR.split("$").join("")
         });
       });
   }
@@ -33,7 +33,7 @@ class CurrencyData extends Component {
       <React.Fragment>
         <th className="data-cap">{cap}</th>
         <th className="data-price">{price}</th>
-        <th className="data-change">{change}</th>
+        <th className="data-change">{change}%</th>
       </React.Fragment>
     );
   }

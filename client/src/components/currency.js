@@ -28,7 +28,8 @@ class Currency extends Component {
     const { data } = this.state;
     return (
       <Jumbotron className="jumbo">
-        <Table hover size="sm">
+        <h3 className="title">Cryptocurrency Prices</h3>
+        <Table hover responsive className="table">
           <thead>
             <tr>
               <th>Coin Name (Code)</th>

@@ -1,7 +1,9 @@
+/* BACKGROUND */
 .jumbo {
   background-color: #fcfcfc;
 }
 
+/* Navbar */
 .navbar,
 .navbar-default {
   background-color: #1565c0;
@@ -10,6 +12,7 @@
 .price,
 .fav {
   font-size: 1em;
+  font-family: "Raleway", sans-serif;
   padding-bottom: 1em;
   padding-top: 1em;
 }
@@ -19,13 +22,28 @@
 }
 
 .fav {
-  margin-right: 10em;
+  margin-right: 12em;
 }
 
 .head {
-  margin-left: 10em;
+  font-family: "Raleway", sans-serif;
+  margin-left: 15%;
 }
 
+/* TITLE: Prices*/
+.title {
+  margin-bottom: 1em;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+}
+
+/* Table */
+.table,
+.table-default {
+  box-shadow: 1px 1px 3px gray;
+}
+
+/* Crypto img & name */
 .cur-img {
   max-width: 20px;
   max-height: 20px;
@@ -36,6 +54,7 @@
   font-size: 1em;
 }
 
+/* Crypto data */
 .data-cap,
 .data-price,
 .data-change {
