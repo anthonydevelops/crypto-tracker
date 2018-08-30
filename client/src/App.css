@@ -1,8 +1,9 @@
 .cur-img {
-  max-width: 40px;
-  max-height: 40px;
+  max-width: 20px;
+  max-height: 20px;
 }
 
 .cur-header {
   margin-left: 2%;
+  font-size: 1em;
 }

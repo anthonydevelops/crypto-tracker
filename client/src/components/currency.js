@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Table, Media } from "reactstrap";
 import "../App.css";
+import CurrencyData from "./CurrencyData";
 
 class Currency extends Component {
   constructor(props) {
@@ -23,8 +24,8 @@ class Currency extends Component {
   }
 
   render() {
-    const { data } = this.state;
     // Return the data, which is held as {[ {}, {}, ... ]}
+    const { data } = this.state;
     return (
       <Table hover>
         <thead>
@@ -38,7 +39,7 @@ class Currency extends Component {
         <tbody>
           {data.map(item => {
             return (
-              <tr>
+              <tr key={item.CoinInfo.Name.toString()}>
                 <th>
                   <Media>
                     <Media href="#">
@@ -59,6 +60,7 @@ class Currency extends Component {
                     </Media>
                   </Media>
                 </th>
+                <CurrencyData data={item.CoinInfo.Name} />
               </tr>
             );
           })}
