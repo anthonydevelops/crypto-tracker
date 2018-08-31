@@ -42,8 +42,8 @@ export default class Header extends Component {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/" className="fav">
-                  Favorites
+                <NavLink href="/" className="news">
+                  News
                 </NavLink>
               </NavItem>
             </Nav>

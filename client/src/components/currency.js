@@ -13,7 +13,7 @@ class Currency extends Component {
 
   componentDidMount() {
     fetch(
-      "https://min-api.cryptocompare.com/data/top/totalvol?limit=10&tsym=USD"
+      "https://min-api.cryptocompare.com/data/top/totalvol?limit=20&tsym=USD"
     )
       .then(res => res.json())
       .then(result => {
@@ -29,7 +29,7 @@ class Currency extends Component {
     return (
       <Jumbotron className="jumbo">
         <h3 className="title">Cryptocurrency Prices</h3>
-        <Table hover responsive className="table">
+        <Table hover size="sm" className="table">
           <thead>
             <tr>
               <th>Coin Name (Code)</th>

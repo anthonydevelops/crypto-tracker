@@ -10,7 +10,7 @@
 }
 
 .price,
-.fav {
+.news {
   font-size: 1em;
   font-family: "Raleway", sans-serif;
   padding-bottom: 1em;
@@ -21,7 +21,7 @@
   margin-right: 2em;
 }
 
-.fav {
+.news {
   margin-right: 12em;
 }
 
@@ -38,9 +38,8 @@
 }
 
 /* Table */
-.table,
-.table-default {
-  box-shadow: 1px 1px 3px gray;
+.table {
+  box-shadow: 1px 1px 5px gray;
 }
 
 /* Crypto img & name */
