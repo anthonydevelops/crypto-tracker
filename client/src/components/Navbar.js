@@ -1,14 +1,5 @@
 import React, { Component } from "react";
-import News from "./News";
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink
-} from "reactstrap";
+import { Navbar, NavbarBrand } from "reactstrap";
 import "../App.css";
 
 export default class Header extends Component {
@@ -27,11 +18,6 @@ export default class Header extends Component {
     });
   }
 
-  handleNews() {
-    console.log("News was clicked");
-    return <News />;
-  }
-
   render() {
     return (
       <div>
@@ -39,21 +25,6 @@ export default class Header extends Component {
           <NavbarBrand href="/" className="float-center head">
             CryptoTracker
           </NavbarBrand>
-          <NavbarToggler onClick={this.toggle} />
-          <Collapse isOpen={this.state.isOpen} navbar>
-            <Nav className="ml-auto" navbar>
-              <NavItem>
-                <NavLink href="/" className="price" active>
-                  Prices
-                </NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/" className="news" onClick={this.handleNews}>
-                  News
-                </NavLink>
-              </NavItem>
-            </Nav>
-          </Collapse>
         </Navbar>
       </div>
     );

@@ -59,3 +59,8 @@
 .data-change {
   color: orangered;
 }
+
+/* News */
+.list-group-item-text {
+  font-size: 1em;
+}

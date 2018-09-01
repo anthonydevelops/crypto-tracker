@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import { Jumbotron } from "reactstrap";
 import Header from "./components/Navbar";
 import Currency from "./components/Currency";
+import News from "./components/News";
 import "./App.css";
 
 class App extends Component {
@@ -9,7 +11,10 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <Header />
-          <Currency />
+          <Jumbotron className="jumbo">
+            <Currency />
+            <News />
+          </Jumbotron>
         </header>
       </div>
     );

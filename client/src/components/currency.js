@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Table, Media, Jumbotron } from "reactstrap";
+import { Table, Media } from "reactstrap";
 import "../App.css";
 import CurrencyData from "./CurrencyData";
 
@@ -13,7 +13,7 @@ class Currency extends Component {
 
   componentDidMount() {
     fetch(
-      "https://min-api.cryptocompare.com/data/top/totalvol?limit=20&tsym=USD"
+      "https://min-api.cryptocompare.com/data/top/totalvol?limit=10&tsym=USD"
     )
       .then(res => res.json())
       .then(result => {
@@ -27,7 +27,7 @@ class Currency extends Component {
     // Return the data, which is held as {[ {}, {}, ... ]}
     const { data } = this.state;
     return (
-      <Jumbotron className="jumbo">
+      <div>
         <h3 className="title">Cryptocurrency Prices</h3>
         <Table hover size="sm" className="table">
           <thead>
@@ -68,7 +68,7 @@ class Currency extends Component {
             })}
           </tbody>
         </Table>
-      </Jumbotron>
+      </div>
     );
   }
 }
