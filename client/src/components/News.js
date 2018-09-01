@@ -1,27 +1,18 @@
 import React, { Component } from "react";
 import {
-  ListGroup,
-  ListGroupItem,
-  ListGroupItemHeading,
-  ListGroupItemText
+  ListGroup
+  // ListGroupItem,
+  // ListGroupItemHeading,
+  // ListGroupItemText
 } from "reactstrap";
 import "../App.css";
 
-class News extends Component {
+export default class News extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: {},
-      isToggleOn: true
+      data: {}
     };
-
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    this.setState(prevState => ({
-      isToggleOn: !prevState.isToggleOn
-    }));
   }
 
   componentDidMount() {
@@ -31,11 +22,18 @@ class News extends Component {
         this.setState({
           data: result.Data
         });
+        console.log(this.state.data);
       });
   }
 
   render() {
     const { data } = this.state;
-    return <ListGroup>{Object.keys(data).map({})}</ListGroup>;
+    return (
+      <ListGroup>
+        {Object.entries(data).forEach(key => {
+          console.log(key[1]);
+        })}
+      </ListGroup>
+    );
   }
 }

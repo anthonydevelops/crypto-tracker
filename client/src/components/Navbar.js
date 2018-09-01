@@ -27,6 +27,11 @@ export default class Header extends Component {
     });
   }
 
+  handleNews() {
+    console.log("News was clicked");
+    return <News />;
+  }
+
   render() {
     return (
       <div>
@@ -43,7 +48,7 @@ export default class Header extends Component {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/" className="news" onClick={News}>
+                <NavLink href="/" className="news" onClick={this.handleNews}>
                   News
                 </NavLink>
               </NavItem>
