@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import News from "./News";
 import {
   Collapse,
   Navbar,
@@ -42,7 +43,7 @@ export default class Header extends Component {
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/" className="news">
+                <NavLink href="/" className="news" onClick={News}>
                   News
                 </NavLink>
               </NavItem>
