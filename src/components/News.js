@@ -37,12 +37,13 @@ export default class News extends Component {
 
     return (
       <h1>
+        <h3 className="title news-title">News</h3>
         {data.map(article => {
           return (
-            <ListGroup>
+            <ListGroup className="news-list">
               <ListGroupItem>
-                <ListGroupItemHeading>{article.title}</ListGroupItemHeading>
-                <ListGroupItemText>{article.body}</ListGroupItemText>
+                <ListGroupItemText>{article.title}</ListGroupItemText>
+                <ListGroupItemHeading>{article.body} ...</ListGroupItemHeading>
                 <Button color="info" href={article.url}>
                   Read More
                 </Button>
