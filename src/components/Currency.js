@@ -42,7 +42,7 @@ class Currency extends Component {
             {data.map(item => {
               return (
                 <tr key={item.CoinInfo.Name.toString()}>
-                  <th>
+                  <th scope="row">
                     <Media>
                       <Media href="#">
                         <Media
