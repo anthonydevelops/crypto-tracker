@@ -28,7 +28,7 @@ class Currency extends Component {
     const { data } = this.state;
     return (
       <div>
-        <h3 className="title">Cryptocurrency Prices</h3>
+        <h3 className="title">Prices</h3>
         <Table hover size="sm" className="table">
           <thead>
             <tr>

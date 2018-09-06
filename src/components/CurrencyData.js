@@ -29,13 +29,23 @@ class CurrencyData extends Component {
 
   render() {
     const { cap, price, change } = this.state;
-    return (
-      <React.Fragment>
-        <th className="data-cap">{cap}</th>
-        <th className="data-price">{price}</th>
-        <th className="data-change">{change}%</th>
-      </React.Fragment>
-    );
+    if (parseFloat(change) > 0) {
+      return (
+        <React.Fragment>
+          <th className="data-cap">{cap}</th>
+          <th className="data-price">{price}</th>
+          <th style={{ color: "green" }}>{change}%</th>
+        </React.Fragment>
+      );
+    } else {
+      return (
+        <React.Fragment>
+          <th className="data-cap">{cap}</th>
+          <th className="data-price">{price}</th>
+          <th style={{ color: "red" }}>{change}%</th>
+        </React.Fragment>
+      );
+    }
   }
 }
 

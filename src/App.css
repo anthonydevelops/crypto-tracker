@@ -60,11 +60,10 @@
   font-size: 1em;
 }
 
-/* Crypto data */
+/* Currency Data */
 .data-cap,
-.data-price,
-.data-change {
-  color: orangered;
+.data-price {
+  color: black;
 }
 
 /* News */

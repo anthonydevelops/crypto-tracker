@@ -1,11 +1,5 @@
 import React, { Component } from "react";
-import {
-  ListGroup,
-  ListGroupItem,
-  ListGroupItemHeading,
-  ListGroupItemText,
-  Button
-} from "reactstrap";
+import { ListGroup, ListGroupItem, Button } from "reactstrap";
 import "../App.css";
 
 export default class News extends Component {
@@ -36,14 +30,14 @@ export default class News extends Component {
     }
 
     return (
-      <h1>
+      <div>
         <h3 className="title news-title">News</h3>
         {data.map(article => {
           return (
-            <ListGroup className="news-list">
+            <ListGroup key={article.id} className="news-list">
               <ListGroupItem>
-                <ListGroupItemText>{article.title}</ListGroupItemText>
-                <ListGroupItemHeading>{article.body} ...</ListGroupItemHeading>
+                <h2>{article.title}</h2>
+                <h5>{article.body} ...</h5>
                 <Button color="info" href={article.url}>
                   Read More
                 </Button>
@@ -51,7 +45,7 @@ export default class News extends Component {
             </ListGroup>
           );
         })}
-      </h1>
+      </div>
     );
   }
 }
